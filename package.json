@@ -1,0 +1,34 @@
+{
+  "name": "koya-booking",
+  "version": "1.0.0",
+  "description": "Clinic booking API and web page (Koya Cohort 4 assessment, Task 1)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "tsx --env-file=.env tests/contract.ts",
+    "dev": "tsx --env-file=.env scripts/dev.ts",
+    "typecheck": "tsc",
+    "seed": "tsx --env-file=.env scripts/seed.ts",
+    "db:schema": "psql \"$DATABASE_URL\" -f schema.sql"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@hono/node-server": "^1.19.17",
+    "hono": "^4.13.14",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
