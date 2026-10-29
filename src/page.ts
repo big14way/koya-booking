@@ -41,7 +41,8 @@ export const PAGE_HTML = /* html */ `<!doctype html>
   button.primary, button.secondary { margin-top: 16px; border: 0; border-radius: 8px; padding: 10px 16px;
           font: inherit; font-weight: 600; cursor: pointer; }
   button.primary { background: var(--accent); color: #fff; }
-  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); margin-left: 8px; }
+  button.secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
   button:disabled.primary { opacity: .6; cursor: wait; }
   .error { background: var(--danger-soft); color: var(--danger); border-radius: 8px; padding: 10px 12px; margin-top: 12px; }
   .ok { border-color: var(--accent); }
@@ -77,8 +78,10 @@ export const PAGE_HTML = /* html */ `<!doctype html>
     <h2 id="conf-title">You're booked</h2>
     <dl id="conf-details"></dl>
     <div class="error" id="conf-error" hidden></div>
-    <button class="secondary" id="cancel" type="button" style="margin-left:0">Cancel booking</button>
-    <button class="secondary" id="again" type="button">Book another</button>
+    <div class="actions">
+      <button class="secondary" id="cancel" type="button">Cancel booking</button>
+      <button class="secondary" id="again" type="button">Book another</button>
+    </div>
   </section>
 </main>
 
