@@ -336,3 +336,6 @@ app.all("/ui/*", async (c) => {
   const body = method === "POST" ? await c.req.text() : undefined;
   return app.fetch(new Request(url, { method, headers, body }));
 });
+
+// Vercel entry point: Vercel detects Hono and serves this default export.
+export default app;
