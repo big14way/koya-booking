@@ -1,13 +1,14 @@
-// Fills the API with a week of demo slots (replaces everything via /reset).
+// Fills the API with three weeks of demo slots (replaces everything via /reset).
 // Run: BASE_URL=https://... npm run seed
 const BASE = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "");
+const WEEKDAYS = 15;
 const providers = ["Dr Ade Okafor", "Dr Bello Musa", "Dr Chioma Eze"];
 const times = ["09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "14:00", "14:30", "15:00", "15:30"];
 
 const slots: { id: string; provider: string; start: string; end: string }[] = [];
 const day = new Date();
 let added = 0;
-while (added < 5) {
+while (added < WEEKDAYS) {
   day.setUTCDate(day.getUTCDate() + 1);
   if (day.getUTCDay() === 0 || day.getUTCDay() === 6) continue; // weekdays only
   added++;
